@@ -1,1 +1,1 @@
-from .ProjectsView import ProjectsView
+from .ProjectsListView import ProjectsListView

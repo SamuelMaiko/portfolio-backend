@@ -12,3 +12,4 @@ class ReceivedEmail(BaseModel):
 
     def __str__(self):
         return f"{self.subject} from {self.sender_name}"
+ 
