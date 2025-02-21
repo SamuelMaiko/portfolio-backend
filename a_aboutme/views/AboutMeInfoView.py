@@ -2,7 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from a_aboutme.models import AboutMeInfo
-from a_aboutme.serializers.AboutMeInfoSerializer import AboutMeInfoSerializer
+from a_aboutme.serializers import AboutMeInfoSerializer
 
 class AboutMeInfoView(APIView):
     def get(self, request):

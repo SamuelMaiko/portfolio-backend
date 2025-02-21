@@ -7,5 +7,5 @@ class SkillArea(BaseModel):
     class Meta:
         db_table = 'skill_areas'
 
-    def __str__(self):
+    def __str__(self): 
         return self.name

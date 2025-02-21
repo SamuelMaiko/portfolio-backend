@@ -9,6 +9,6 @@ class Language(BaseModel):
 
     class Meta:
         db_table = 'languages'
-
+  
     def __str__(self):
         return self.name
