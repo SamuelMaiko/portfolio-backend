@@ -3,6 +3,7 @@ from django.db import models
 
 class Project(BaseModel):
     title = models.CharField(max_length=255)
+    description = models.TextField()
     image = models.ImageField(upload_to='media/project_pictures')
     github_link = models.URLField(max_length=200)
     live_link = models.URLField(max_length=200)

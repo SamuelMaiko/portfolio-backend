@@ -8,4 +8,4 @@ class SkillAreasView(APIView):
     def get(self, request):
         skill_areas = SkillArea.objects.all()
         serializer = SkillAreaSerializer(skill_areas, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.data, status=status.HTTP_200_OK) 
