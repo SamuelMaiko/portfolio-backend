@@ -10,7 +10,6 @@ class SkillAreaSerializer(serializers.ModelSerializer):
         fields = [
             'id',
             'name',
-            'description',
             'languages',
             'created_at',
             'updated_at'

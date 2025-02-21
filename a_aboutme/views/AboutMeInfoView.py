@@ -7,5 +7,5 @@ from a_aboutme.serializers import AboutMeInfoSerializer
 class AboutMeInfoView(APIView):
     def get(self, request):
         about_me_info = AboutMeInfo.objects.first()
-        serializer = AboutMeInfoSerializer(about_me_info)
+        serializer = AboutMeInfoSerializer(about_me_info, context={'request':request})
         return Response(serializer.data, status=status.HTTP_200_OK)

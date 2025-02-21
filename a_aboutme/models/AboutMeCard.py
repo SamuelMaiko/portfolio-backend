@@ -5,7 +5,7 @@ class AboutMeCard(BaseModel):
     title = models.CharField(max_length=255)
     lineOne = models.CharField(max_length=255)
     lineTwo = models.CharField(max_length=255)
-    institution = models.CharField(max_length=255)
+    institution = models.CharField(max_length=255, null=True, blank=True)
 
     class Meta:
         db_table = 'about_me_cards'

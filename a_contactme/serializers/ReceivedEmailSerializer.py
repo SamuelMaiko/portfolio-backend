@@ -9,7 +9,7 @@ class ReceivedEmailSerializer(serializers.ModelSerializer):
             'sender_name',
             'sender_email',
             'subject',
-            'message'
+            'message',
             'created_at',
             'updated_at',
         ]

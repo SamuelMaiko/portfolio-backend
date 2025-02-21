@@ -7,5 +7,5 @@ from a_profile.serializers import ProfileSerializer
 class ProfileView(APIView):
     def get(self, request):
         profile = Profile.objects.first()
-        serializer = ProfileSerializer(profile)
+        serializer = ProfileSerializer(profile, context={"request":request})
         return Response(serializer.data, status=status.HTTP_200_OK)

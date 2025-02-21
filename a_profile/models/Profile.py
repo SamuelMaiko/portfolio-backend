@@ -3,7 +3,7 @@ from django.db import models
 
 class Profile(BaseModel):
     name = models.CharField(max_length=255)
-    image = models.ImageField(upload_to='media/profile_picture', null=True)
+    image = models.ImageField(upload_to='media/profile_picture', null=True, blank=True)
     position = models.CharField(max_length=255)
     phone = models.CharField(max_length=20)
     email = models.EmailField(max_length=255)
