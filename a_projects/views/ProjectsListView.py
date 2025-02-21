@@ -7,5 +7,5 @@ from a_projects.serializers import ProjectSerializer
 class ProjectsListView(APIView):
     def get(self, request):
         projects = Project.objects.all()
-        serializer = ProjectSerializer(projects, many=True)
+        serializer = ProjectSerializer(projects, many=True, context={'request':request})
         return Response(serializer.data, status=status.HTTP_200_OK)
