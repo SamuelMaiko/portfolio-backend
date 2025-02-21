@@ -8,9 +8,9 @@ class Profile(BaseModel):
     phone = models.CharField(max_length=20)
     email = models.EmailField(max_length=255)
     location = models.CharField(max_length=255)
-    resume_url = models.URLField(max_length=200)
-    linkedin_url = models.URLField(max_length=200)
-    github_url = models.URLField(max_length=200)
+    resume = models.FileField(upload_to='media/resume', null=True, blank=True)
+    linkedin_url = models.URLField(max_length=200, null=True, blank=True)
+    github_url = models.URLField(max_length=200, null=True, blank=True)
 
     class Meta:
         db_table = 'profiles'
