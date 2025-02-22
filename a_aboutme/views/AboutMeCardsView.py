@@ -7,5 +7,5 @@ from a_aboutme.serializers import AboutMeCardSerializer
 class AboutMeCardsView(APIView):
     def get(self, request):
         about_me_cards = AboutMeCard.objects.all()
-        serializer = AboutMeCardSerializer(about_me_cards, many=True)
+        serializer = AboutMeCardSerializer(about_me_cards, many=True, context={'request':request})
         return Response(serializer.data, status=status.HTTP_200_OK)

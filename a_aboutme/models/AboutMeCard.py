@@ -2,6 +2,7 @@ from apis.models import BaseModel
 from django.db import models
 
 class AboutMeCard(BaseModel):
+    icon = models.FileField(upload_to='about_me_icons/', null=True, blank=True)
     title = models.CharField(max_length=255)
     lineOne = models.CharField(max_length=255)
     lineTwo = models.CharField(max_length=255)

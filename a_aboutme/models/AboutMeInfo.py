@@ -2,7 +2,7 @@ from apis.models import BaseModel
 from django.db import models
 
 class AboutMeInfo(BaseModel):
-    photo = models.ImageField(upload_to='media/about_me_picture')
+    photo = models.ImageField(upload_to='about_me_picture/')
     description = models.TextField()
 
     class Meta: 
