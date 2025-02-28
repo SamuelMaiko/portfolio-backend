@@ -79,4 +79,4 @@ This backend is deployed on **[PythonAnywhere](https://www.pythonanywhere.com/)*
 A huge shout-out to **PythonAnywhere** for providing an easy and reliable way to deploy Django applications! 🎉
 
 You can access the live API at:  
-🔗 `https://maikoportfolio.pythonanywhere.com/admin/`
+🔗 https://maikoportfolio.pythonanywhere.com/admin/
