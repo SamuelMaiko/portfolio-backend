@@ -1,11 +1,17 @@
 from pathlib import Path
+import os
+import environ
+
+env = environ.Env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Take environment variables from .env file
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
-SECRET_KEY = 'django-insecure-l*6e&p&@qq_7r6l8b4njm^=83nz@x*4@@(22&_1ks7edq(ho_o'
+SECRET_KEY = env('SECRET_KEY')
 
-DEBUG = True
+DEBUG = env.bool('DEBUG', default=False)
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
@@ -29,7 +35,7 @@ INSTALLED_APPS = [
     "a_skills",
 ]
 
-CORS_ALLOWED_ORIGINS=[
+CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "https://samuelmaiko.site",
 ]
@@ -98,9 +104,23 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT=BASE_DIR/ 'staticfiles'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-MEDIA_URL='/media/'
-MEDIA_ROOT=BASE_DIR /'media/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Email configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_PORT = env.int('EMAIL_PORT')
+EMAIL_USE_TLS = env.bool('EMAIL_USE_TLS')
+EMAIL_USE_SSL = env.bool('EMAIL_USE_SSL')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+# EMAIL_HOST_PASSWORD = "rqns uill upvu pxrq"
+DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
+
+WORK_EMAIL = env('WORK_EMAIL')
