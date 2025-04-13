@@ -1,6 +1,7 @@
 from apis.models import BaseModel
 from django.db import models
 
+
 class Project(BaseModel):
     title = models.CharField(max_length=255)
     description = models.TextField(null=True, blank=True)
