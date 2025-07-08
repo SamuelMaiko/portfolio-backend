@@ -1,0 +1,23 @@
+✉️ NEW CONTACT MESSAGE
+========================
+
+New message from your portfolio
+Received on {{ timestamp|date:"F d, Y \a\t g:i A" }}
+
+CONTACT DETAILS
+---------------
+👤 Name: {{ sender_name }}
+✉️ Email: {{ sender_email }}
+{% if subject %}📋 Subject: {{ subject }}{% endif %}
+
+💬 MESSAGE
+----------
+{{ message }}
+
+READY TO REPLY?
+---------------
+Reply directly to: {{ sender_email }}
+
+---
+This message was sent from your portfolio contact form.
+Please reply directly to {{ sender_email }}

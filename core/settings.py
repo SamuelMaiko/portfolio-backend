@@ -97,7 +97,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Nairobi'
 
 USE_I18N = True
 
@@ -124,3 +124,7 @@ EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWOR')
 DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
 
 WORK_EMAIL = env('WORK_EMAIL')
+
+# Email template settings
+# Optional logo URL for email templates
+EMAIL_LOGO_URL = env('EMAIL_LOGO_URL', default=None)
