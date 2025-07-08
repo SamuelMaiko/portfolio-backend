@@ -38,10 +38,10 @@ class Education(BaseModel):
     end_date = models.CharField(
         max_length=50, null=True, blank=True)  # Flexible format
     description = models.TextField(null=True, blank=True)
+    sequence = models.IntegerField(default=0)
 
     class Meta:
         db_table = 'educations'
-        ordering = ['-end_date']
 
     def __str__(self):
         return f"{self.title} - {self.institution.name}"

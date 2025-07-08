@@ -16,4 +16,4 @@ def send_contact_email(sender, instance, created, **kwargs):
                              from_email=settings.EMAIL_HOST_USER,
                              to=[settings.WORK_EMAIL])
 
-        email.send(fail_silently=True)
+        email.send(fail_silently=False)

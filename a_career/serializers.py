@@ -41,7 +41,7 @@ class CareerSerializer(serializers.ModelSerializer):
     company = CompanySerializer(read_only=True)
     achievements = CareerAchievementSerializer(many=True, read_only=True)
     technologies = CareerTechnologySerializer(many=True, read_only=True)
-    
+
     class Meta:
         model = Career
         fields = [
@@ -55,6 +55,7 @@ class CareerSerializer(serializers.ModelSerializer):
             'description',
             'achievements',
             'technologies',
+            'sequence',
             'created_at',
             'updated_at'
         ]

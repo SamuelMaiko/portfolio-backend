@@ -28,7 +28,7 @@ class EducationSkillSerializer(serializers.ModelSerializer):
 class EducationSerializer(serializers.ModelSerializer):
     institution = InstitutionSerializer(read_only=True)
     skills = EducationSkillSerializer(many=True, read_only=True)
-    
+
     class Meta:
         model = Education
         fields = [
@@ -41,6 +41,7 @@ class EducationSerializer(serializers.ModelSerializer):
             'end_date',
             'description',
             'skills',
+            'sequence',
             'created_at',
             'updated_at'
         ]
