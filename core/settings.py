@@ -33,6 +33,8 @@ INSTALLED_APPS = [
     "a_profile",
     "a_projects",
     "a_skills",
+    "a_education",
+    "a_career",
 ]
 
 CORS_ALLOWED_ORIGINS = [
