@@ -4,7 +4,7 @@ from rest_framework import status
 
 # Import models
 from a_profile.models import Profile
-from a_aboutme.models import AboutMeInfo, AboutMeCard
+from a_aboutme.models import AboutMeInfo
 from a_skills.models import SkillArea
 from a_projects.models import Project
 from a_education.models import Education
@@ -12,7 +12,7 @@ from a_career.models import Career
 
 # Import serializers
 from a_profile.serializers import ProfileSerializer
-from a_aboutme.serializers import AboutMeInfoSerializer, AboutMeCardSerializer
+from a_aboutme.serializers import AboutMeInfoSerializer
 from a_skills.serializers import SkillAreaSerializer
 from a_projects.serializers import ProjectSerializer
 from a_education.serializers import EducationSerializer
@@ -35,11 +35,6 @@ class PortfolioView(APIView):
             about_me_info_data = AboutMeInfoSerializer(
                 about_me_info, context={'request': request}).data if about_me_info else None
 
-            # Get about me cards
-            about_me_cards = AboutMeCard.objects.all()
-            about_me_cards_data = AboutMeCardSerializer(
-                about_me_cards, many=True, context={'request': request}).data
-
             # Get skill areas with languages
             skill_areas = SkillArea.objects.all()
             skill_areas_data = SkillAreaSerializer(skill_areas, many=True).data
@@ -60,10 +55,7 @@ class PortfolioView(APIView):
             # Aggregate all data
             portfolio_data = {
                 'profile': profile_data,
-                'about_me': {
-                    'info': about_me_info_data,
-                    'cards': about_me_cards_data
-                },
+                'about_me': about_me_info_data,
                 'skills': skill_areas_data,
                 'projects': projects_data,
                 'education': education_data,
