@@ -9,6 +9,7 @@ from a_skills.models import SkillArea
 from a_projects.models import Project
 from a_education.models import Education
 from a_career.models import Career
+from a_services.models import Service
 
 # Import serializers
 from a_profile.serializers import ProfileSerializer
@@ -17,6 +18,7 @@ from a_skills.serializers import SkillAreaSerializer
 from a_projects.serializers import ProjectSerializer
 from a_education.serializers import EducationSerializer
 from a_career.serializers import CareerSerializer
+from a_services.serializers import ServiceSerializer
 
 
 class PortfolioView(APIView):
@@ -52,6 +54,10 @@ class PortfolioView(APIView):
             careers = Career.objects.all()
             career_data = CareerSerializer(careers, many=True).data
 
+            # Get services data
+            services = Service.objects.all()
+            services_data = ServiceSerializer(services, many=True).data
+
             # Aggregate all data
             portfolio_data = {
                 'profile': profile_data,
@@ -59,7 +65,8 @@ class PortfolioView(APIView):
                 'skills': skill_areas_data,
                 'projects': projects_data,
                 'education': education_data,
-                'careers': career_data
+                'careers': career_data,
+                'services': services_data
             }
 
             return Response(portfolio_data, status=status.HTTP_200_OK)

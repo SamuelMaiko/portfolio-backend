@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     "a_skills",
     "a_education",
     "a_career",
+    "a_services",
 ]
 
 CORS_ALLOWED_ORIGINS = [
