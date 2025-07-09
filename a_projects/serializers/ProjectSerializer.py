@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from a_projects.models import Project
 
+
 class ProjectSerializer(serializers.ModelSerializer):
     image = serializers.SerializerMethodField()
 
@@ -9,10 +10,13 @@ class ProjectSerializer(serializers.ModelSerializer):
         fields = [
             'id',
             'title',
-            'description', 
+            'category',
+            'description',
             'image',
             'github_link',
             'live_link',
+            'show_project',
+            'sequence',
             'created_at',
             'updated_at'
         ]

@@ -1,9 +1,8 @@
 from django.urls import path, include
+from .views import PortfolioView
 
 urlpatterns = [
-    path('profile/', include('a_profile.urls')),
-    path('aboutme/', include('a_aboutme.urls')),
-    path('skill/', include('a_skills.urls')),
-    path('projects/', include('a_projects.urls')),
+    path('portfolio/', PortfolioView.as_view(), name='portfolio'),
     path('contactme/', include('a_contactme.urls')),
+    path('services/', include('a_services.urls')),
 ]

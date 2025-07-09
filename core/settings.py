@@ -10,7 +10,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 SECRET_KEY = env('SECRET_KEY')
-
 DEBUG = env.bool('DEBUG', default=False)
 DEBUG = False
 
@@ -34,6 +33,9 @@ INSTALLED_APPS = [
     "a_profile",
     "a_projects",
     "a_skills",
+    "a_education",
+    "a_career",
+    "a_services",
 ]
 
 CORS_ALLOWED_ORIGINS = [
@@ -97,7 +99,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Nairobi'
 
 USE_I18N = True
 
@@ -115,7 +117,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Email configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = env.int('EMAIL_PORT')
 EMAIL_USE_TLS = env.bool('EMAIL_USE_TLS')
 EMAIL_USE_SSL = env.bool('EMAIL_USE_SSL')
@@ -124,3 +126,7 @@ EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWOR')
 DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
 
 WORK_EMAIL = env('WORK_EMAIL')
+
+# Email template settings
+# Optional logo URL for email templates
+EMAIL_LOGO_URL = env('EMAIL_LOGO_URL', default=None)
