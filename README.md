@@ -60,14 +60,10 @@ It serves API endpoints for my portfolio during build time.
 
   ## API Endpoints
 
-  | Method | Endpoint                        | Description                                                        |
-  | ------ | ------------------------------- | ------------------------------------------------------------------ |
-  | GET    | `/api/profile/`                 | Fetches portfolio profile data                                     |
-  | GET    | `/api/aboutme/info/`            | Fetches about image and description                                |
-  | GET    | `/api/aboutme/cards/`           | Fetches about page info for the cards                              |
-  | GET    | `/api/skills/`                  | Fetches skills areas and their list of languages                   |
-  | GET    | `/api/projects/`                | Fetches all projects                                               |
-  | POST   | `/api/contactme/receive-email/` | Receives email from frontend stores it and sends it to owner email |
+  | Method | Endpoint                        | Description                                                                         |
+  | ------ | ------------------------------- | ----------------------------------------------------------------------------------- |
+  | GET    | `/api/portfolio/`               | Fetches all portfolio data such as projects, skills, contact details, education etc |
+  | POST   | `/api/contactme/receive-email/` | Receives email from frontend stores it and sends it to owner email                  |
 
   ⚡ **All these endpoints generate JSON data used by the frontend during build time.**
 
@@ -75,8 +71,7 @@ It serves API endpoints for my portfolio during build time.
 
 ## Deployment
 
-This backend is deployed on **[PythonAnywhere](https://www.pythonanywhere.com/)** 🚀  
-A huge shout-out to **PythonAnywhere** for providing an easy and reliable way to deploy Django applications! 🎉
+This backend is deployed on **[PythonAnywhere](https://www.pythonanywhere.com/)** 🚀
 
 You can access the live API at:  
 🔗 https://maikoportfolio.pythonanywhere.com/admin/
