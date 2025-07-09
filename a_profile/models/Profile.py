@@ -13,6 +13,8 @@ class Profile(BaseModel):
     resume = models.FileField(upload_to='resume/', null=True, blank=True)
     linkedin_url = models.URLField(max_length=200, null=True, blank=True)
     github_url = models.URLField(max_length=200, null=True, blank=True)
+    default_theme = models.CharField(max_length=20, choices=[(
+        'light', 'Light'), ('dark', 'Dark')], default='light')
 
     class Meta:
         db_table = 'profiles'

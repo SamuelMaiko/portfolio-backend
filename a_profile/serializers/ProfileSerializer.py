@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from a_profile.models import Profile
 
+
 class ProfileSerializer(serializers.ModelSerializer):
     image = serializers.SerializerMethodField()
     resume = serializers.SerializerMethodField()
@@ -8,16 +9,17 @@ class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
         fields = [
-            'id', 
-            'name', 
-            'image', 
-            'position', 
-            'phone', 
-            'email', 
-            'location', 
-            'resume', 
-            'linkedin_url', 
+            'id',
+            'name',
+            'image',
+            'position',
+            'phone',
+            'email',
+            'location',
+            'resume',
+            'linkedin_url',
             'github_url',
+            'default_theme',
             'created_at',
             'updated_at'
         ]
