@@ -45,4 +45,4 @@ def send_contact_email(sender, instance, created, **kwargs):
         email.attach_alternative(html_content, "text/html")
 
         # Send email
-        email.send(fail_silently=False)
+        email.send(fail_silently=True)
