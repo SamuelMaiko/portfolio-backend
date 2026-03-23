@@ -6,4 +6,4 @@ __pycache__/
 media/
 static/
 .vscode/
-.idea/
+.idea/.env
