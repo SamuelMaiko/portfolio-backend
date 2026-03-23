@@ -7,3 +7,4 @@ media/
 static/
 .vscode/
 .idea/.env
+db.sqlite3
